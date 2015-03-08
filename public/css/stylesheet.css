@@ -1,9 +1,9 @@
-.title {
+#title {
   background-color: blue;
   
 }
 
-.title h2 {
+#title h2 {
   color: red;
   font-size: 24px;
   display: inline-block;
@@ -16,6 +16,6 @@ h2 {
   font-family: sans-serif;
 }
 
-.layout {
+#layout {
   background-color: #CCCCCC;
 }
