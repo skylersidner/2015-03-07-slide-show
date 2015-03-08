@@ -1,0 +1,21 @@
+.title {
+  background-color: blue;
+  
+}
+
+.title h2 {
+  color: red;
+  font-size: 24px;
+  display: inline-block;
+  text-align: center;
+}
+
+h2 {
+  color: red;
+  font-size: 24px;
+  font-family: sans-serif;
+}
+
+.layout {
+  background-color: #CCCCCC;
+}

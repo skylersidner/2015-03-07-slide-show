@@ -1,6 +1,6 @@
 require 'sqlite3'
 
-DATABASE = SQLite3::Database.new("slide_data.db")
+DATABASE = SQLite3::Database.new("database/slide_data.db")
 
 DATABASE.execute("CREATE TABLE IF NOT EXISTS slides
                 (id INTEGER PRIMARY KEY,
