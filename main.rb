@@ -23,7 +23,7 @@ get "/test" do
 end
 
 get "/next" do
-  
+
 end
 
 get "/previous" do
