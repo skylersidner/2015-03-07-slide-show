@@ -16,16 +16,20 @@ get "/" do
   
 end
 
-get "/test" do
+post "/start" do
   first = Slide.new(Slide.get_first_slide)
   first_hash = first.to_hash
   first_hash.to_json
 end
 
-get "/next" do
-
+post "/prev" do
+  slide = Slide.get_prev_slide(params[:slide_order_field])
+  slide_hash = slide.to_hash
+  slide_hash.to_json
 end
 
-get "/previous" do
-  
+post "/next" do
+  slide = Slide.get_next_slide(params[:slide_order_field])
+  slide_hash = slide.to_hash
+  slide_hash.to_json
 end
