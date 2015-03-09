@@ -1,6 +1,6 @@
 #title_div {
   background-color: black;
-  
+  height: 70px;
 }
 
 #title {
@@ -17,12 +17,21 @@
   width: 400px;
 }
 
-#previous_button {
+#prev_button {
   float: left;
 }
 
 #next_button {
-  float: right
+  float: right;
+}
+
+.buttons {
+  font-size: 20px;
+  color: red;
+  background-color: black;
+  margin-top: 200px;
+  border-radius: 8px;
+  
 }
 
 body {

@@ -7,18 +7,15 @@
   <p id="slide_text"></p>
 </div>
 
-<form id="buttons" action="http://localhost:4567/prev" method="post">
-  <input type="submit" value="Previous" id="prev_button">
-  <input type="hidden" name="slide_order_field" id="slide_order_field" value="">
-</form>
-
-<form id="buttons" action="http://localhost:4567/next" method="post">
-  <input type="submit" value="Next" id="next_button">
-  <input type="hidden" name="slide_order_field" id="slide_order_field" value="">
-</form>
+<button type="button" id="prev_button" class="buttons" value="Previous">
+  < Previous
+</button>
+<button type="button" id="next_button" class="buttons" value="Next">
+  Next >
+</button>
 
 <div id="current_slide_div">
   <p id="current_slide"></p>
 </div>
 
-<a id="start" href="http://localhost:4567/start">Click here to start the slideshow</a>
+<a id="start" href="http://localhost:4567/start">Click here to see the first slide.</a>

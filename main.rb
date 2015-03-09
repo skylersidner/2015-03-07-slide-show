@@ -13,7 +13,6 @@ get "/" do
   first_hash.to_json
   
   erb :"homepage"
-  
 end
 
 post "/start" do
@@ -23,13 +22,13 @@ post "/start" do
 end
 
 post "/prev" do
-  slide = Slide.get_prev_slide(params[:slide_order_field])
+  slide = Slide.get_prev_slide(params["current"])
   slide_hash = slide.to_hash
   slide_hash.to_json
 end
 
 post "/next" do
-  slide = Slide.get_next_slide(params[:slide_order_field])
+  slide = Slide.get_next_slide(params["current"])
   slide_hash = slide.to_hash
   slide_hash.to_json
 end
