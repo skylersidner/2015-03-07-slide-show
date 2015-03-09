@@ -8,12 +8,24 @@ require_relative 'slide.rb'
 
 
 get "/" do
-  erb :"homepage"
-end
-
-get "/test" do
-
   first = Slide.new(Slide.get_first_slide)
   first_hash = first.to_hash
   first_hash.to_json
+  
+  erb :"homepage"
+  
+end
+
+get "/test" do
+  first = Slide.new(Slide.get_first_slide)
+  first_hash = first.to_hash
+  first_hash.to_json
+end
+
+get "/next" do
+  
+end
+
+get "/previous" do
+  
 end

@@ -2,7 +2,14 @@ window.onload = function() {
   testClick = document.getElementById("test");
   testClick.addEventListener("click", listFirstSlide);
   testClick.onclick = function() {return false};
-
+  
+  findForm = document.getElementById("findStudent");
+  findForm.addEventListener("submit", findObject);
+  findForm.onsubmit = function() {return false};
+  
+  findForm = document.getElementById("findStudent");
+  findForm.addEventListener("submit", findObject);
+  findForm.onsubmit = function() {return false};
 }
 
 function listFirstSlide() {
