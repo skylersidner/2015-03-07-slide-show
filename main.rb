@@ -1,24 +1,26 @@
+require 'rubygems'
+require 'bundler/setup'
+
 require 'pry'
 require 'sinatra'
+require 'sinatra/activerecord'
 require 'json'
 require 'sqlite3'
+
+Bundler.require(:default)
+
+set :database, {adapter: "sqlite3", database: "database/slide_data.db"}
 
 require_relative 'database/db_setup.rb'
 require_relative 'slide.rb'
 
 
 get "/" do
-  first = Slide.new(Slide.get_first_slide)
+  first = Slide.find_by slide_order: '1'
   first_hash = first.to_hash
   first_hash.to_json
   
   erb :"homepage"
-end
-
-post "/start" do
-  first = Slide.new(Slide.get_first_slide)
-  first_hash = first.to_hash
-  first_hash.to_json
 end
 
 post "/prev" do
