@@ -16,11 +16,13 @@ require_relative 'slide.rb'
 
 
 get "/" do
-  first = Slide.find_by_slide_order('1')
+  erb :homepage
+end
+
+post "/landing" do
+  first = Slide.find_by slide_order: 1
   first_hash = first.to_hash
   first_hash.to_json
-  
-  erb :"homepage"
 end
 
 post "/prev" do

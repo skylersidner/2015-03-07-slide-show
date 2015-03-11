@@ -23,7 +23,7 @@ class Slide < ActiveRecord::Base
       p_slide = self.count
     end
     
-    self.find_by_slide_order("#{p_slide}")
+    self.find_by slide_order: "#{p_slide}"
     
     # slide = DATABASE.execute("SELECT * FROM slides WHERE slide_order = '#{p_slide}'")
     # slide = slide[0]
@@ -36,7 +36,7 @@ class Slide < ActiveRecord::Base
       n_slide = 1
     end
     
-    self.find_by_slide_order("#{n_slide}")
+    self.find_by slide_order: "#{n_slide}"
     
     # slide = DATABASE.execute("SELECT * FROM slides WHERE slide_order = '#{n_slide}'")
     # slide = slide[0]

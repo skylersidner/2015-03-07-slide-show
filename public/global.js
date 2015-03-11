@@ -20,7 +20,7 @@ window.onload = function() {
 
 function listFirstSlide() {
   var js_req = new XMLHttpRequest;
-  js_req.open("get", "http://localhost:4567");
+  js_req.open("post", "http://localhost:4567/landing");
   js_req.send();
   js_req.addEventListener("load", loadFunction, false);
 };
