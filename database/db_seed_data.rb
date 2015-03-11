@@ -2,9 +2,7 @@ require 'sqlite3'
 
 DATABASE = SQLite3::Database.new("slide_data.db")
 
-body1 = 'Lorem ipsum dolor sit amet, consectetur adipiscing 
-                elit. Maecenas faucibus commodo dolor a sagittis. Sed aliquet 
-                augue ex, vel rutrum nulla consectetur id.'
+body1 = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
 
 body2 = 'Vivamus cursus, arcu at tempor condimentum, dui 
                 augue gravida metus, ac blandit tellus dui at eros. 
