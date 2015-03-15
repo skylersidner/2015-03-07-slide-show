@@ -4,8 +4,8 @@ require 'bundler/setup'
 require 'pry'
 require 'sinatra'
 require 'sinatra/activerecord'
-require 'json'
 require 'sqlite3'
+require 'json'
 
 Bundler.require(:default)
 
@@ -36,3 +36,5 @@ post "/next" do
   slide_hash = slide.to_hash
   slide_hash.to_json
 end
+
+binding.pry
