@@ -36,5 +36,3 @@ post "/next" do
   slide_hash = slide.to_hash
   slide_hash.to_json
 end
-
-binding.pry
