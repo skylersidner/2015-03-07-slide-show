@@ -6,7 +6,7 @@ window.onload = function() {
   firstSlide = document.getElementById("start");
   // upon the "click" event, do this function
   firstSlide.addEventListener("click", listFirstSlide);
-  // ?????
+  // when this is clicked, do this function
   firstSlide.onclick = function() {return false};
   
   // listens for "Previous" button
@@ -26,20 +26,21 @@ window.onload = function() {
 function listFirstSlide() {
   // set the local variable to a new request object
   var js_req = new XMLHttpRequest;
-  // ????
+  // which route will this go to
   js_req.open("post", "http://localhost:4567/landing");
-  // ????
+  // push this to the aforementioned route
   js_req.send();
-  // when a response comes back as finished loading, do this function
+  // when a response is finished loading, do this function
   js_req.addEventListener("load", loadFunction, false);
+  return false;
 };
 
 function loadFunction() {
-  // ????
+  // "this" refers to the context the function is being called in
   r = (JSON.parse(this.response));
 
   // set each of these HTML DOM elements to contain these values, based on
-  // the attributes of the passed Slide class object
+  // the attributes of the Slide class object passed by the route
   document.getElementById("title").innerHTML = r.title;
   document.getElementById("slide_text").innerHTML = r.body_text;
   document.getElementById("current_slide").innerHTML = r.slide_order;
@@ -50,12 +51,12 @@ function loadFunction() {
 function prevSlide() {
   // set the variable to a new FormData object
   var params = new FormData()
-  // ????
+  // adds info re: the current slide to the form info being passed to the route
   params.append("current", currentSlide)
 
   // set the variable to a new request object
   var js_req = new XMLHttpRequest;
-  // 
+  // determines the route for the request
   js_req.open("post", "http://localhost:4567/prev");
   // pass the params variable to the route handler
   js_req.send(params);
@@ -66,6 +67,8 @@ function prevSlide() {
     document.getElementById("title").innerHTML = r.title;
     document.getElementById("slide_text").innerHTML = r.body_text;
     document.getElementById("current_slide").innerHTML = r.slide_order;
+    
+    // set the global variable to the slide_order value of the new slide
     currentSlide = r.slide_order
 
   }, false);
